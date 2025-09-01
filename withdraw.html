@@ -1,0 +1,51 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdraw - QuantumRoll Casino</title>
+</head>
+<body>
+  <h1>Withdraw Page</h1>
+  <label>Amount</label>
+  <input id="amount" />
+  <button id="withdraw">Withdraw</button>
+  <p id="balance">Balance: 100</p>
+
+  <script>
+    let balance = 100;
+    document.getElementById('withdraw').addEventListener('click', () => {
+      const amt = parseFloat(document.getElementById('amount').value) || 0;
+      balance -= amt;
+      document.getElementById('balance').innerText = 'Balance: ' + balance;
+    });
+  </script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdraw - QuantumRoll Casino</title>
+</head>
+<body>
+  <h1>Withdraw Page</h1>
+  <label>Amount</label>
+  <input id="amount" />
+  <button id="withdraw">Withdraw</button>
+  <p id="balance">Balance: 100</p>
+
+  <script>
+    let balance = 100;
+    document.getElementById('withdraw').addEventListener('click', () => {
+      const amt = parseFloat(document.getElementById('amount').value) || 0;
+      balance -= amt;
+      document.getElementById('balance').innerText = 'Balance: ' + balance;
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 8264809e264a9ec9b5832889db01cf140abf1c35

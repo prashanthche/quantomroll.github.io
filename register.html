@@ -1,0 +1,71 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - QuantumRoll Casino</title>
+</head>
+<body>
+  <h1>Register Page</h1>
+  <form id="registerForm">
+    <label>Email</label>
+    <input type="email" id="email" />
+    <label>Password</label>
+    <input type="password" id="password" />
+    <label>Confirm Password</label>
+    <input type="password" id="confirm" />
+    <button type="submit">Register</button>
+  </form>
+  <p id="success" style="display:none">Registered successfully!</p>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const pwd = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm').value;
+      if(pwd === confirm){
+        document.getElementById('success').style.display = 'block';
+      } else {
+        alert('Passwords do not match!');
+      }
+    });
+  </script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - QuantumRoll Casino</title>
+</head>
+<body>
+  <h1>Register Page</h1>
+  <form id="registerForm">
+    <label>Email</label>
+    <input type="email" id="email" />
+    <label>Password</label>
+    <input type="password" id="password" />
+    <label>Confirm Password</label>
+    <input type="password" id="confirm" />
+    <button type="submit">Register</button>
+  </form>
+  <p id="success" style="display:none">Registered successfully!</p>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const pwd = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm').value;
+      if(pwd === confirm){
+        document.getElementById('success').style.display = 'block';
+      } else {
+        alert('Passwords do not match!');
+      }
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 8264809e264a9ec9b5832889db01cf140abf1c35

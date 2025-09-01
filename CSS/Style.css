@@ -1,0 +1,83 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Background */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: url('../images/casino-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header */
+header {
+    background-color: rgba(0,0,0,0.7);
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+/* Homepage Hero Section */
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* full screen minus header/footer */
+    text-align: center;
+    background-color: rgba(0,0,0,0.5); /* dark overlay for text readability */
+}
+
+.hero-text h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.btn {
+    background-color: #f1c40f;
+    color: #000;
+    padding: 15px 30px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #d4ac0d;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
