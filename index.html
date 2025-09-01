@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuantumRoll Casino</title>
+    <title>QuantumRoll Casino - Game Gallery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -186,7 +186,7 @@
         /* Home Page Styles */
         .hero {
             height: 500px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1513384566735-84047869d65c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -272,6 +272,17 @@
             color: white;
             font-size: 3rem;
             background-color: #333;
+            position: relative;
+        }
+        
+        .game-img::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
         }
         
         .game-content {
@@ -303,6 +314,53 @@
         
         .play-btn:hover {
             background: linear-gradient(to right, var(--accent-red), #f00);
+        }
+        
+        /* Game Thumbnails */
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .thumbnail-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 180px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .thumbnail-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .thumbnail-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .thumbnail-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1rem;
+            color: white;
+        }
+        
+        .thumbnail-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .thumbnail-desc {
+            font-size: 0.85rem;
+            color: #ddd;
         }
         
         /* Slots Section Styles */
@@ -461,115 +519,6 @@
             text-decoration: underline;
         }
         
-        /* Limits Page Styles */
-        .limits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .limit-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .limit-title {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--accent-red);
-        }
-        
-        .limit-desc {
-            color: var(--text-gray);
-            margin-bottom: 1rem;
-        }
-        
-        .limit-controls {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .limit-select {
-            padding: 0.5rem;
-            background: var(--input-bg);
-            color: var(--text-light);
-            border: 1px solid #444;
-            border-radius: 4px;
-        }
-        
-        .limit-btn {
-            padding: 0.7rem;
-            background: linear-gradient(to right, var(--accent-dark-red), var(--accent-red));
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-        
-        /* About Page Styles */
-        .about-content {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            margin-bottom: 2rem;
-        }
-        
-        .about-content h2 {
-            color: var(--accent-red);
-            margin-bottom: 1rem;
-        }
-        
-        .about-content p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            color: var(--text-gray);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .team-member {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .team-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border: 3px solid var(--accent-red);
-            background: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: white;
-        }
-        
-        .team-name {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .team-role {
-            color: var(--accent-red);
-            margin-bottom: 1rem;
-        }
-        
         /* Footer Styles */
         footer {
             background-color: var(--primary-bg);
@@ -637,36 +586,6 @@
             color: #999;
         }
         
-        /* GitHub Info Box */
-        .github-info {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border-left: 4px solid var(--accent-red);
-        }
-        
-        .github-info h3 {
-            color: var(--accent-red);
-            margin-bottom: 1rem;
-        }
-        
-        .github-info ul {
-            padding-left: 1.5rem;
-            color: var(--text-gray);
-        }
-        
-        .github-info li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .github-info code {
-            background: #2a2a2a;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: monospace;
-        }
-        
         /* Responsive Styles */
         @media (max-width: 900px) {
             nav {
@@ -696,6 +615,10 @@
                 width: 90px;
                 height: 90px;
             }
+            
+            .thumbnail-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
         }
         
         @media (max-width: 600px) {
@@ -722,6 +645,10 @@
             
             .slot-machine {
                 padding: 1rem;
+            }
+            
+            .thumbnail-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -755,58 +682,86 @@
             </div>
         </div>
     </header>
+
     <main>
-<!-- Home Page -->
-<div id="home" class="page active">
-    <section class="hero" style="background-image: url('images/pc.png'); background-size: cover; background-position: center; background-repeat: no-repeat;width:1300px; height: 1100px;">
-        <div class="hero-content">
-            <h2>Premium Casino Experience</h2>
-            <p>Immerse yourself in the ultimate gaming experience with professional dealers, stunning visuals, and the biggest selection of casino games including slots and live poker.</p>
-            <button class="btn" data-page="register">Join Now</button>
-        </div>
-    </section>
-    
-    <section class="games-section">
-        <h2 class="section-title">Featured Games</h2>
-        <div class="games-grid">
-            <!-- Game cards here -->
-        </div>
-    </section>
-</div>           
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Premium Casino Experience</h2>
+                    <p>Immerse yourself in the ultimate gaming experience with professional dealers, stunning visuals, and the biggest selection of casino games including slots and live poker.</p>
+                    <button class="btn" data-page="register">Join Now</button>
+                </div>
+            </section>
+            
             <section class="games-section">
                 <h2 class="section-title">Featured Games</h2>
-                <div class="games-grid">
-                    <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/BJ.jpg'); width: 380px; height: 180px; background-size: cover; background-position: center;"></div>
-                        <div class="game-content">
-                         <h3 class="game-title">Live Blackjack</h3>
-                            <p class="game-desc">Play the classic card game with our professional dealers in real-time.</p>
-                            <button class="play-btn" data-page="login">Play Now</button>
+                
+                <!-- Game Thumbnails Grid -->
+                <div class="thumbnail-grid">
+                    <div class="thumbnail-item">
+                        <div class="game-img" style="background: linear-gradient(45deg, #2c3e50, #4ca1af);">
+                            <i class="fas fa-club"></i>
+                        </div>
+                        <div class="thumbnail-overlay">
+                            <h3 class="thumbnail-title">Live Blackjack</h3>
+                            <p class="thumbnail-desc">Classic card game with live dealers</p>
                         </div>
                     </div>
                     
-                    <div class="game-card">
-                     <div class="game-img" style="background-image: url('images/Roulette.jpg'); width: 380px; height: 180px; background-size: cover; background-position: center;"></div>
-                        <div class="game-content">
-                            <h3 class="game-title">Roulette</h3>
-                            <p class="game-desc">Experience the excitement of the spinning wheel with multiple camera angles.</p>
-                            <button class="play-btn" data-page="login">Play Now</button>
+                    <div class="thumbnail-item">
+                        <div class="game-img" style="background: linear-gradient(45deg, #c0392b, #e74c3c);">
+                            <i class="fas fa-dice"></i>
+                        </div>
+                        <div class="thumbnail-overlay">
+                            <h3 class="thumbnail-title">Roulette</h3>
+                            <p class="thumbnail-desc">Spin the wheel for big wins</p>
                         </div>
                     </div>
                     
-                    <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Auto.webp'); width: 380px; height: 180px; background-size: cover; background-position: center;"></div>
-                        <div class="game-content">
-                            <h3 class="game-title">Auto Roulette</h3>
-                            <p class="game-desc">Join our Texas Hold'em tables and compete against players worldwide.</p>
-                            <button class="play-btn" data-page="login">Play Now</button>
+                    <div class="thumbnail-item">
+                        <div class="game-img" style="background: linear-gradient(45deg, #27ae60, #2ecc71);">
+                            <i class="fas fa-dice-five"></i>
+                        </div>
+                        <div class="thumbnail-overlay">
+                            <h3 class="thumbnail-title">Auto Roulette</h3>
+                            <p class="thumbnail-desc">Fast-paced automated roulette</p>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-item">
+                        <div class="game-img" style="background: linear-gradient(45deg, #8e44ad, #9b59b6);">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="thumbnail-overlay">
+                            <h3 class="thumbnail-title">Mega Fortune</h3>
+                            <p class="thumbnail-desc">Progressive jackpot slots</p>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-item">
+                        <div class="game-img" style="background: linear-gradient(45deg, #f39c12, #f1c40f);">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="thumbnail-overlay">
+                            <h3 class="thumbnail-title">Starburst</h3>
+                            <p class="thumbnail-desc">Colorful gem-themed slots</p>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-item">
+                        <div class="game-img" style="background: linear-gradient(45deg, #16a085, #1abc9c);">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="thumbnail-overlay">
+                            <h3 class="thumbnail-title">Book of Dead</h3>
+                            <p class="thumbnail-desc">Ancient Egyptian adventure</p>
                         </div>
                     </div>
                 </div>
             </section>
-            </main>
             
-            <!-- New Slots Section -->
+            <!-- Slots Section -->
             <section class="slots-section">
                 <h2 class="section-title">Slot Machines</h2>
                 <div class="slot-machine">
@@ -829,39 +784,10 @@
                         <p>Place your bets and spin the reels for a chance to win big!</p>
                     </div>
                 </div>
-                
-                <h3 class="section-title">Popular Slot Games</h3>
-                <div class="slot-games">
-                    <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Mega1.png'); width: 398px; height: 250px; background-size: cover; background-position: center;"></div>
-                        <div class="game-content">
-                            <h3 class="game-title">Mega Fortune</h3>
-                            <p class="game-desc">Spin for progressive jackpots and luxury prizes.</p>
-                            <button class="play-btn" data-page="login">Play Now</button>
-                        </div>
-                    </div>
-                    
-                    <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Star2.png'); width: 398px; height: 250px; background-size: cover; background-position: center;"></div>
-                        <div class="game-content">
-                            <h3 class="game-title">Starburst</h3>
-                            <p class="game-desc">Colorful gems and exciting features await.</p>
-                            <button class="play-btn" data-page="login">Play Now</button>
-                        </div>
-                    </div>
-                    
-                    <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Book.png'); width: 398px; height: 250px; background-size: cover; background-position: center;"></div>
-                        <div class="game-content">
-                            <h3 class="game-title">Book of Dead</h3>
-                            <p class="game-desc">Explore ancient Egypt for hidden treasures.</p>
-                            <button class="play-btn" data-page="login">Play Now</button>
-                        </div>
-                    </div>
-                </div>
-            </section>         
+            </section>
+        </div>
 
-
+        <!-- Other pages (login, register, deposit, withdraw, limits, about) -->
         <!-- Login Page -->
         <div id="login" class="page">
             <div class="form-container">
@@ -1023,34 +949,11 @@
                     
                     <h2>Licensing & Regulation</h2>
                     <p>QuantumRoll Casino operates under the gaming license of the jurisdiction of Curacao, ensuring we meet international standards for fair play and security.</p>
-                    
-                    <h2>Our Team</h2>
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80" alt="CEO" class="team-img">
-                            <h3 class="team-name">Alexander Vance</h3>
-                            <p class="team-role">CEO & Founder</p>
-                            <p>15+ years in gaming industry</p>
-                        </div>
-                        
-                        <div class="team-member">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1588&q=80" alt="CTO" class="team-img">
-                            <h3 class="team-name">Sophia Chen</h3>
-                            <p class="team-role">Chief Technology Officer</p>
-                            <p>Blockchain and gaming security expert</p>
-                        </div>
-                        
-                        <div class="team-member">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" alt="Head of Gaming" class="team-img">
-                            <h3 class="team-name">Marcus Johnson</h3>
-                            <p class="team-role">Head of Gaming Operations</p>
-                            <p>Former professional poker player</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </main>
+
     <footer>
         <div class="footer-content">
             <div class="footer-about">
