@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuantumRoll Casino - GitHub Ready</title>
+    <title>QuantumRoll Casino</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -267,6 +266,12 @@
             height: 200px;
             background-size: cover;
             background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            background-color: #333;
         }
         
         .game-content {
@@ -292,6 +297,8 @@
             border-radius: 4px;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .play-btn:hover {
@@ -396,52 +403,6 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
-        }
-        
-        /* Live Poker Styles */
-        .live-poker-section {
-            margin: 4rem 0;
-        }
-        
-        .poker-tables {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .poker-table {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-        
-        .poker-table-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .poker-table-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 1rem;
-            color: white;
-        }
-        
-        .poker-table-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .poker-table-info {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            color: #ccc;
         }
         
         /* Form Styles */
@@ -591,6 +552,12 @@
             object-fit: cover;
             margin-bottom: 1rem;
             border: 3px solid var(--accent-red);
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
         }
         
         .team-name {
@@ -693,6 +660,13 @@
             margin-bottom: 0.5rem;
         }
         
+        .github-info code {
+            background: #2a2a2a;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 900px) {
             nav {
@@ -786,7 +760,7 @@
         <!-- Home Page -->
         <div id="home" class="page active">
             <div class="github-info">
-                <h3>GitHub Repository Setup</h3>
+                <h3><i class="fab fa-github"></i> GitHub Repository Setup</h3>
                 <p>For proper GitHub deployment:</p>
                 <ul>
                     <li>Create an <code>images</code> folder in your repository</li>
@@ -800,10 +774,23 @@
                         <li><code>Star2.png</code> - Starburst slot</li>
                         <li><code>Book.png</code> - Book of Dead slot</li>
                     </ul>
+                    <li>Your repository structure should look like this:</li>
+                    <pre>
+your-repo/
+├── index.html
+└── images/
+    ├── pc.png
+    ├── BJ.jpg
+    ├── Roulette.jpg
+    ├── Auto.webp
+    ├── Mega1.png
+    ├── Star2.png
+    └── Book.png
+                    </pre>
                 </ul>
             </div>
 
-            <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/pc.png');">
+            <section class="hero">
                 <div class="hero-content">
                     <h2>Premium Casino Experience</h2>
                     <p>Immerse yourself in the ultimate gaming experience with professional dealers, stunning visuals, and the biggest selection of casino games including slots and live poker.</p>
@@ -815,7 +802,9 @@
                 <h2 class="section-title">Featured Games</h2>
                 <div class="games-grid">
                     <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/BJ.jpg');"></div>
+                        <div class="game-img">
+                            <i class="fas fa-club"></i>
+                        </div>
                         <div class="game-content">
                             <h3 class="game-title">Live Blackjack</h3>
                             <p class="game-desc">Play the classic card game with our professional dealers in real-time.</p>
@@ -824,7 +813,9 @@
                     </div>
                     
                     <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Roulette.jpg');"></div>
+                        <div class="game-img">
+                            <i class="fas fa-dice"></i>
+                        </div>
                         <div class="game-content">
                             <h3 class="game-title">Roulette</h3>
                             <p class="game-desc">Experience the excitement of the spinning wheel with multiple camera angles.</p>
@@ -833,7 +824,9 @@
                     </div>
                     
                     <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Auto.webp');"></div>
+                        <div class="game-img">
+                            <i class="fas fa-dice-five"></i>
+                        </div>
                         <div class="game-content">
                             <h3 class="game-title">Auto Roulette</h3>
                             <p class="game-desc">Join our Texas Hold'em tables and compete against players worldwide.</p>
@@ -870,7 +863,9 @@
                 <h3 class="section-title">Popular Slot Games</h3>
                 <div class="slot-games">
                     <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Mega1.png');"></div>
+                        <div class="game-img">
+                            <i class="fas fa-coins"></i>
+                        </div>
                         <div class="game-content">
                             <h3 class="game-title">Mega Fortune</h3>
                             <p class="game-desc">Spin for progressive jackpots and luxury prizes.</p>
@@ -879,7 +874,9 @@
                     </div>
                     
                     <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Star2.png');"></div>
+                        <div class="game-img">
+                            <i class="fas fa-gem"></i>
+                        </div>
                         <div class="game-content">
                             <h3 class="game-title">Starburst</h3>
                             <p class="game-desc">Colorful gems and exciting features await.</p>
@@ -888,7 +885,9 @@
                     </div>
                     
                     <div class="game-card">
-                        <div class="game-img" style="background-image: url('images/Book.png');"></div>
+                        <div class="game-img">
+                            <i class="fas fa-book"></i>
+                        </div>
                         <div class="game-content">
                             <h3 class="game-title">Book of Dead</h3>
                             <p class="game-desc">Explore ancient Egypt for hidden treasures.</p>
@@ -899,7 +898,6 @@
             </section>
         </div>
 
-        <!-- Other pages (login, register, deposit, withdraw, limits, about) -->
         <!-- Login Page -->
         <div id="login" class="page">
             <div class="form-container">
@@ -1065,8 +1063,8 @@
                     <h2>Our Team</h2>
                     <div class="team-grid">
                         <div class="team-member">
-                            <div class="team-img" style="background: #333; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user" style="font-size: 3rem;"></i>
+                            <div class="team-img">
+                                <i class="fas fa-user"></i>
                             </div>
                             <h3 class="team-name">Alexander Vance</h3>
                             <p class="team-role">CEO & Founder</p>
@@ -1074,8 +1072,8 @@
                         </div>
                         
                         <div class="team-member">
-                            <div class="team-img" style="background: #333; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user" style="font-size: 3rem;"></i>
+                            <div class="team-img">
+                                <i class="fas fa-user"></i>
                             </div>
                             <h3 class="team-name">Sophia Chen</h3>
                             <p class="team-role">Chief Technology Officer</p>
@@ -1083,8 +1081,8 @@
                         </div>
                         
                         <div class="team-member">
-                            <div class="team-img" style="background: #333; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user" style="font-size: 3rem;"></i>
+                            <div class="team-img">
+                                <i class="fas fa-user"></i>
                             </div>
                             <h3 class="team-name">Marcus Johnson</h3>
                             <p class="team-role">Head of Gaming Operations</p>
